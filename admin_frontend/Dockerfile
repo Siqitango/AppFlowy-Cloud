@@ -23,7 +23,7 @@ RUN apt update && apt install lld clang protobuf-compiler -y
 
 # Chef failed to build, so we're using the following instead
 FROM chef as builder
-COPY . .
+COPY ./admin_frontend .
 WORKDIR /app/admin_frontend
 RUN cargo build --release --bin admin_frontend
 
